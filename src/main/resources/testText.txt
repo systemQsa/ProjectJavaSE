@@ -1,0 +1,11 @@
+against
+by
+character
+classes
+expressions
+for
+matching
+patterns
+regular
+sequences
+specified

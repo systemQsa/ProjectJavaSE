@@ -1,0 +1,1 @@
+for matching character sequences against patterns specified by  expressions
