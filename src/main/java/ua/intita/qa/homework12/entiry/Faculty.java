@@ -32,6 +32,7 @@ public class Faculty implements AverageScore {
         boolean check = checkIfGroupPresent(faculty);
         int counter = 0;
         double average = 0;
+        double result = 0;
         if (check){
             for (Student student : students){
                if (faculty.equals(student.getFaculty())){
@@ -44,6 +45,12 @@ public class Faculty implements AverageScore {
                }
             }
         }
-        return average/ counter;
+        try {
+            result = average/counter;
+        } catch (ArithmeticException e){
+            e.printStackTrace();
+        }
+
+        return result;
     }
 }

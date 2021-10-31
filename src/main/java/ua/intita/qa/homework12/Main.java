@@ -11,7 +11,7 @@ import ua.intita.qa.homework12.exceptions.OutOfScoreException;
 
 public class Main {
     public static void main(String[] args) {
-      Students students = new Students();
+        Students students = new Students();
         try {
             double res = students.averageScore("Parker");
             System.out.println(res);

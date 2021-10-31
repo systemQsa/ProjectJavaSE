@@ -35,7 +35,7 @@ public class Group implements AverageScore {
         boolean check = checkIfStudentsPresent(groupName);
         int counter = 0;
         double average = 0;
-
+        double result = 0;
         if (check) {
             for (Student student : students) {
                 if (groupName.equals(student.getGroup())) {
@@ -48,7 +48,11 @@ public class Group implements AverageScore {
                 }
             }
         }
-
-        return average / counter;
+        try{
+            result = average/counter;
+        }catch (ArithmeticException e){
+            e.printStackTrace();
+        }
+        return result;
     }
 }

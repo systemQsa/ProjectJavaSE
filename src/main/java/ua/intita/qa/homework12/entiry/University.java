@@ -29,7 +29,7 @@ public class University implements AverageScore {
     public double getAverage(String faculty, String subject) {
         int counter = 0;
         double average = 0;
-
+         double res = 0;
         for (Student student : students) {
             if (faculty.equals(student.getFaculty())) {
                 for (Map.Entry<String, Integer> entry : student.getLessons().entrySet()) {
@@ -40,7 +40,12 @@ public class University implements AverageScore {
                 }
             }
         }
+        try{
+            res = average/counter;
+        }catch (ArithmeticException e){
+            e.printStackTrace();
+        }
 
-        return average / counter;
+        return res;
     }
 }
