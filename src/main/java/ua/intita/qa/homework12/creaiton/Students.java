@@ -36,7 +36,7 @@ public class Students implements Score{
          }
          res = average/counter;
          if (res < 0 || res > 10){
-             throw new OutOfScoreException("out of score exception");
+             throw new OutOfScoreException();
          }
 
         return res;

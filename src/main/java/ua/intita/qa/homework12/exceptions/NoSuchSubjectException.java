@@ -1,15 +1,15 @@
 package ua.intita.qa.homework12.exceptions;
 
-public class NoSuchSubjectException extends NoSuchFieldException{
-    private String message;
-    public NoSuchSubjectException(){}
-
-    public NoSuchSubjectException(String message){
-        this.message = message;
+public class NoSuchSubjectException extends Exception {
+    public NoSuchSubjectException() {
+        super();
     }
 
-    @Override
-    public String getMessage() {
-        return message;
+    public NoSuchSubjectException(String message) {
+        super(message);
+    }
+
+    public NoSuchSubjectException(String message, Throwable cause) {
+        super(message, cause);
     }
 }

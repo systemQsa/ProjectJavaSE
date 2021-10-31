@@ -1,16 +1,15 @@
 package ua.intita.qa.homework12.exceptions;
 
-public class OutOfScoreException extends Exception{
-     private String message;
+public class OutOfScoreException extends Exception {
+    public OutOfScoreException() {
+        super();
+    }
 
-     public OutOfScoreException(){}
+    public OutOfScoreException(String message) {
+        super(message);
+    }
 
-     public OutOfScoreException(String message){
-         this.message = message;
-     }
-
-    @Override
-    public String getMessage() {
-        return message;
+    public OutOfScoreException(String message, Throwable cause) {
+        super(message, cause);
     }
 }

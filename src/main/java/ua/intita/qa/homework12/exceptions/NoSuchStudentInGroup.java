@@ -1,15 +1,15 @@
 package ua.intita.qa.homework12.exceptions;
 
-public class NoSuchStudentInGroup extends NoSuchFieldException{
-    private String message;
-    public NoSuchStudentInGroup(){}
-
-    public NoSuchStudentInGroup(String message){
-        this.message = message;
+public class NoSuchStudentInGroup extends Exception {
+    public NoSuchStudentInGroup() {
+        super();
     }
 
-    @Override
-    public String getMessage() {
-        return message;
+    public NoSuchStudentInGroup(String message) {
+        super(message);
+    }
+
+    public NoSuchStudentInGroup(String message, Throwable cause) {
+        super(message, cause);
     }
 }

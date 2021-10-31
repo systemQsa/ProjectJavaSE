@@ -1,14 +1,15 @@
 package ua.intita.qa.homework12.exceptions;
 
-public class NoSuchGroupOnFaculty extends Exception{
-    private String message;
-
-    public NoSuchGroupOnFaculty(String message){
-        this.message = message;
+public class NoSuchGroupOnFaculty extends Exception {
+    public NoSuchGroupOnFaculty() {
+        super();
     }
 
-    @Override
-    public String getMessage() {
-        return message;
+    public NoSuchGroupOnFaculty(String message) {
+        super(message);
+    }
+
+    public NoSuchGroupOnFaculty(String message, Throwable cause) {
+        super(message, cause);
     }
 }

@@ -23,7 +23,7 @@ public class Group implements AverageScore {
             }
         }
         if (!flag) {
-            throw new NoSuchGroupOnFaculty("No such group found!");
+            throw new NoSuchGroupOnFaculty("No groups on faculty");
         }
 
         return true;
