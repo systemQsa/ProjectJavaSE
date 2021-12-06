@@ -7,6 +7,13 @@ public class Student {
     private int course;
     private int score;
 
+    public Student(String name, String group, int course, int score) {
+        this.name = name;
+        this.group = group;
+        this.course = course;
+        this.score = score;
+    }
+
     public String getName() {
         return name;
     }
@@ -23,24 +30,12 @@ public class Student {
         this.course = course;
     }
 
-    public Student(String name, String group, int course, int score) {
-        this.name = name;
-        this.group = group;
-        this.course = course;
-        this.score = score;
-    }
-
     public String getGroup() {
         return group;
     }
 
     public void setGroup(String group) {
         this.group = group;
-    }
-
-    @Override
-    public String toString() {
-        return "(" + name + "-" + group + "-" + course + "-" + score + ")";
     }
 
 
@@ -52,5 +47,10 @@ public class Student {
         this.score = score;
     }
 
+
+    @Override
+    public String toString() {
+        return "(" + name + "-" + group + "-" + course + "-" + score + ")";
+    }
 
 }

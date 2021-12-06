@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentDemo {
+    static {
+
+    }
     public static void main(String[] args) {
         Util util = new Util();
         List<Student> students = new ArrayList<>();

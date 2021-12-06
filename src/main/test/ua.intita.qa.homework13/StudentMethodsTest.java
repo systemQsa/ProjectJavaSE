@@ -1,6 +1,9 @@
-package ua.intita.qa.homework17.student;
+package ua.intita.qa.homework13;
 
 import org.junit.Test;
+import ua.intita.qa.homework17.student.Student;
+import ua.intita.qa.homework17.student.StudentMethods;
+import ua.intita.qa.homework17.student.Util;
 
 import java.util.ArrayList;
 import java.util.List;

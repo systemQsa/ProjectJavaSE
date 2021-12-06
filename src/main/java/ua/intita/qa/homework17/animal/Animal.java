@@ -58,16 +58,13 @@ public class Animal {
 
     public void sortByAge(Map<String, ? extends Pet> map){
         List<Map.Entry<String, ? extends Pet>> list = new LinkedList<Map.Entry<String, ? extends Pet>>(map.entrySet());
-        List<Pet>list1 = new ArrayList<>();
+        List<Pet> list1 = new ArrayList<>();
         for (Map.Entry<String,?extends Pet> elem: map.entrySet()) {
             list1.add(elem.getValue());
         }
-       Collections.sort(list1, new Comparator<Pet>() {
-           @Override
-           public int compare(Pet o1, Pet o2) {
-               //???? не понимаю как сравнивать, если у Pet только id и он не знает о поле возраст в наследниках
-               return 0;
-           }
+       list1.sort((o1, o2) -> {
+           //???? не понимаю как сравнивать, если у Pet только id и он не знает о поле возраст в наследниках
+           return 0;
        });
         for (Pet pet:list1) {
             System.out.println(pet);

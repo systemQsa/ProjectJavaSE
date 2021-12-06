@@ -3,34 +3,16 @@ package ua.intita.qa.homework17.animal;
 import java.util.Comparator;
 import java.util.Objects;
 
-public class Dog extends Pet implements Comparator<Dog> {
+public class Dog extends Pet {
     private String name;
-    private String bread;
+    private String breed;
     private int age;
 
-    public Dog(int id, String name, String bread, int age) {
-        this.id = id;
+    public Dog(int id, String name, String breed, int age) {
+        super(id);
         this.name = name;
-        this.bread = bread;
+        this.breed = breed;
         this.age = age;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Dog dog = (Dog) o;
-        return age == dog.age;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(age);
-    }
-
-    @Override
-    public int compare(Dog o1, Dog o2) {
-        return o1.getAge() - o2.getAge();
     }
 
     public String getName() {
@@ -42,11 +24,11 @@ public class Dog extends Pet implements Comparator<Dog> {
     }
 
     public String getBread() {
-        return bread;
+        return breed;
     }
 
-    public void setBread(String bread) {
-        this.bread = bread;
+    public void setBread(String breed) {
+        this.breed = breed;
     }
 
     public int getAge() {
@@ -58,13 +40,26 @@ public class Dog extends Pet implements Comparator<Dog> {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Dog)) return false;
+        if (!super.equals(o)) return false;
+        Dog dog = (Dog) o;
+        return age == dog.age && Objects.equals(name, dog.name) && Objects.equals(breed, dog.breed);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), name, breed, age);
+    }
+
+    @Override
     public String toString() {
         return "Dog{" +
                 "name='" + name + '\'' +
-                ", bread='" + bread + '\'' +
+                ", breed='" + breed + '\'' +
                 ", age=" + age +
+                ", id=" + id +
                 '}';
     }
-
-
 }

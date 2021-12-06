@@ -1,7 +1,6 @@
 package ua.intita.qa.homework17.student;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class StudentMethods {
@@ -9,12 +8,6 @@ public class StudentMethods {
 
     public StudentMethods(List<Student> students) {
         this.students = students;
-    }
-
-
-    @Override
-    public String toString() {
-        return "" + students;
     }
 
     public List<Student> deleteStudent() {
@@ -40,5 +33,10 @@ public class StudentMethods {
             }
         }
         return list;
+    }
+
+    @Override
+    public String toString() {
+        return "" + students;
     }
 }

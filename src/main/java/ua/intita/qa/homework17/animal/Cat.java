@@ -3,21 +3,17 @@ package ua.intita.qa.homework17.animal;
 import java.util.Comparator;
 import java.util.Objects;
 
-public class Cat extends Pet implements Comparator<Cat>{
+public class Cat extends Pet{
+
     private String name;
     private String bread;
     private int age;
 
-    public Cat(int id,String name, String bread, int age) {
-        this.id = id;
+    public Cat(int id, String name, String bread, int age) {
+        super(id);
         this.name = name;
         this.bread = bread;
         this.age = age;
-    }
-
-    @Override
-    public int compare(Cat o1, Cat o2) {
-        return o1.getAge() - o2.getAge();
     }
 
     public String getName() {
@@ -40,22 +36,18 @@ public class Cat extends Pet implements Comparator<Cat>{
         return age;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Cat)) return false;
+        if (!super.equals(o)) return false;
         Cat cat = (Cat) o;
-        return age == cat.age;
+        return age == cat.age && Objects.equals(name, cat.name) && Objects.equals(bread, cat.bread);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(age);
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+        return Objects.hash(super.hashCode(), name, bread, age);
     }
 
     @Override
@@ -64,8 +56,7 @@ public class Cat extends Pet implements Comparator<Cat>{
                 "name='" + name + '\'' +
                 ", bread='" + bread + '\'' +
                 ", age=" + age +
+                ", id=" + id +
                 '}';
     }
-
-
 }
