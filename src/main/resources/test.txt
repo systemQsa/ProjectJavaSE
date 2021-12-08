@@ -1,0 +1,8 @@
+Multithreading can be a great way to increase the performance of some types of programs.
+However, mulithreading is even more challenging than multitasking.
+The threads are executing within the same program and are hence reading and writing the same memory simultaneously.
+This can result in errors not seen in a singlethreaded program.
+Some of these errors may not be seen on single CPU machines, because two threads never really execute "simultaneously".
+Modern computers, though, come with multi core CPUs, and even with multiple CPUs too.
+This means that separate threads can be executed by separate cores or CPUs simultaneously.
+
